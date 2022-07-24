@@ -1,2 +1,11 @@
-# read me
+# readme generator
+  # 
+  # 
+  # 
+  # 
+  # 
+  # 
+  # 
+  # 
+  
 
