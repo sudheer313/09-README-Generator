@@ -46,14 +46,19 @@ function generateMarkdown(data) {
   return `
   # ${data.title}
   ## Description
-  ${data.Description}
-  
+  ${data.description}
+
+##Video Demonstration<br>
+[Videolink](https://drive.google.com/file/d/1arcAQ1DKXlp5ARww0NYt8srPjvLTCczZ/view)
+ 
   ## Table Of Contents
-  - [Project Description](#Description)
-  - [Usage](#Usage)
-  - [Installation](#Installation)
-  - [Contributing](#Contributors)
+  - [Project Description](#description)
+  - [Usage](#usage)
+  - [Installation](#installation)
+  - [Contributing](#contributors)
   - [Tests](#tests)
+  - [Git Hub Repo](#username)
+  - [Email Address](#email)
 
 
   
@@ -87,3 +92,7 @@ function generateMarkdown(data) {
 }
 
 module.exports = generateMarkdown;
+
+//referred ASK BCS//
+//referrd https://www.youtube.com/watch?v=QFV7jzu8mKw//
+//referred ashachakre0906/Professional-README-Generator//
