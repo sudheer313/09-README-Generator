@@ -16,7 +16,7 @@ function renderLicenseBadge(license) {
 function renderLicenseLink(license) {
   if (license === "none") {
     return "";
-  } else return `[licence](licence)`;
+  } else return `[licence](this.licence)`;
 }
 
 // TODO: Create a function that returns the license section of README
@@ -24,43 +24,50 @@ function renderLicenseLink(license) {
 function renderLicenseSection(license) {
   if (license === "none") {
     return "";
-  } else return `[licence](licence)`;
-if(license==='Apache 2.0'){
-  return `## License
-  License is [License: Apache 2.0](https://opensource.org/licenses/Apache-2.0)`;
-}else if(license==='Mozilla'){
-  return `## Licence
-  License is [License: Mozilla] [License: MPL 2.0](https://opensource.org/licenses/MPL-2.0)`;
-}else if (license==='IBM'){
-  return `## License
-  License is [License: IBM](https://opensource.org/licenses/MPL-2.0)`;
-  
-}else if (license==='Boost'){
-  return `## Licence
-  License is [License: Boost](https://www.boost.org/LICENSE_1_0.txt)`;
-} else if (license==='none'){
-  return '';
+  } else if (license === "Boost") {
+    return `## License
+  This project is license under the [License: Boost](https://www.boost.org/LICENSE_1_0.txt)`;
+  } else if (license === "Mozilla") {
+    return `## License
+This project is license under the[License: MPL 2.0](https://opensource.org/licenses/MPL-2.0)`;
+  } else if (license === "IBM") {
+    return `## License
+This project is license under thes '[License: IPL 1.0](https://opensource.org/licenses/IPL-1.0)`;
+  } else if (license === "MIT") {
+    return `## License
+This project is license under the [License: MIT](https://opensource.org/licenses/MIT)`;
+  } else if (license === "Apache 2.0") {
+    return `## License
+This project is license under the [License: Apache 2.0](https://opensource.org/licenses/Apache-2.0)`;
+  }
 }
-
-}
-
-
-
-
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `
   # ${data.title}
-  # DATA
-  ##${data.description}
- 
-  ## iNSTALLATION sTEPS
-  ${data.installation}
-
-   ##${data.usage}
-   ##lICENCE
-   ${renderLicenseBadge(data.license)}
+  ## Description
+  ${data.Description}
   
+  ## Table Of Contents
+  - [Project Description](#Description)
+  - [Usage](#Usage)
+  - [Installation](#Installation)
+  - [Contributing](#Contributors)
+  - [Tests](#tests)
+
+
+  
+ 
+  ## Installation 
+  ${data.installation}
+  
+## Usage
+  ${data.usage} 
+ 
+   ## License
+   ${renderLicenseBadge(data.license)}
+   ${renderLicenseLink(data.license)}
+   ${renderLicenseSection(data.license)}
    
    ## Contributors
    ${data.contributing}
@@ -68,16 +75,14 @@ function generateMarkdown(data) {
    ## Test Cases
    ${data.test}
    
-  ## Git Hub UserName
+  ## Git Hub Repo
+  [Github](https://github.com/${data.username})<br>
   ${data.username}
    
   
   ## Email Address
   ${data.email}
-  
-
-  
-
+   
 `;
 }
 
